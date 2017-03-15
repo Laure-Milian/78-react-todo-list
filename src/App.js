@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Items from './Items.js';
 import ItemForm from './ItemForm.js';
+import Filters from './Filters.js';
 
 class App extends Component {
 
@@ -35,11 +36,26 @@ class App extends Component {
     })
   }
 
+  changeStatus(id) {
+    let changedItems = this.state.items.map((item) => {
+      if (id == item.id) {
+        if (item.status == true) {
+          item.status = false;
+        } else {
+          item.status = true;
+        }
+      }
+      return item;
+    })
+    this.addItems(changedItems);
+  }
+
   render() {
     return (
       <div className="App">
         <ItemForm addItems={this.addItems.bind(this)} />
-        <Items items={this.state.items} />
+        <Items items={this.state.items} setNewStatus={this.changeStatus.bind(this)} />
+        <Filters />
       </div>
     );
   }
