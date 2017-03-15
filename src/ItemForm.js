@@ -5,9 +5,7 @@ class ItemForm extends Component {
 	constructor(props) {
 		super(props);
 		this.textInput = null;
-		this.state = {
-			items: []
-		};
+		this.newItems = []
 	}
 
 	handleClick(event) {
@@ -16,8 +14,9 @@ class ItemForm extends Component {
 			id: Date.now(),
 			content: this.textInput.value
 		}
-		this.state.items.push(newItem);
+		this.newItems.push(newItem);
 		this.textInput.value = "";
+		this.props.addItems(this.newItems);
 	}
 
 	render() {
