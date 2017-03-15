@@ -12,23 +12,24 @@ class App extends Component {
         [
         {
           id: 1,
-          content: "Manger"
+          content: "Manger",
+          status: true
         },
         {
           id: 2,
-          content: "Boire"
+          content: "Boire",
+          status: false
         },
         {
           id: 3,
-          content: "Respirer"
+          content: "Respirer",
+          status: false
         }
       ]
     }
   }
 
   addItems(newItems) {
-    console.log("coucou");
-    console.log(this.state.items)
     this.setState({
       items: newItems
     })

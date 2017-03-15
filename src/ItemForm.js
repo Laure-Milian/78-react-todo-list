@@ -12,7 +12,8 @@ class ItemForm extends Component {
 		event.preventDefault();
 		let newItem = {
 			id: Date.now(),
-			content: this.textInput.value
+			content: this.textInput.value,
+			status: false
 		}
 		this.newItems.push(newItem);
 		this.textInput.value = "";
