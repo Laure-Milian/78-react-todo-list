@@ -24,13 +24,12 @@ class Items extends Component {
 	}
 
 	render() {
+		const items = this.state.items;
+		const listItems = items.map((item) => { return <li> {item.content} </li> });
+		console.log(listItems);
 		return (
-			<ul>
-				<li> {this.state.items[0].content} </li>
-				<li> {this.state.items[1].content} </li>
-				<li> {this.state.items[2].content} </li>
-			</ul>
-			)
+			<ul> { listItems } </ul>
+		);
 	}
 }
 
