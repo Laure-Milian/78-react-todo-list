@@ -25,8 +25,7 @@ class Items extends Component {
 
 	render() {
 		const items = this.state.items;
-		const listItems = items.map((item) => { return <li> {item.content} </li> });
-		console.log(listItems);
+		const listItems = items.map((item) => { return <li key={item.id}> {item.content} </li> });
 		return (
 			<ul> { listItems } </ul>
 		);
